@@ -1,3 +1,6 @@
+puts "\nProperty Listings and Mortgage Calculator\n\n"
+
+
 class HomePurchaseOption
   attr_reader :address, :property_value, :selling_price, :down_payment
  
@@ -37,7 +40,7 @@ class HomePurchaseOption
     required_mortgage * REQUIRED_EQUITY > @down_payment
   end
 end
- 
+
 [
   {
     address: '43 Fenmore Lane',
@@ -72,9 +75,8 @@ end
 ].each do |attributes|
   purchase_option = HomePurchaseOption.new(attributes)
  
-  puts "***#{purchase_option.address}***"
+  puts " - #{purchase_option.address} - "
   puts "Mortgage Value: #{purchase_option.required_mortgage}"
   puts "2 Year: #{purchase_option.insurance_cost(2)}"
-  puts "***"
-  puts
+  puts 
 end
